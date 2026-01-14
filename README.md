@@ -14,7 +14,7 @@ about NASM (and generally assembly) development :)
 # PHILOSOPHIE
 - linux first, always.
 - every 'function' is *de facto* a `%macro..%endmacro` block:
-```
+```nasm
 %macro print 1
     mov rax, 1
     mov rdi, 1
@@ -33,7 +33,7 @@ also, you need to `%include` the file at the beginning of the \
 source file because one of the things that it adds in is `default rel`, \
 which must happen before anything else otherwise assembler errors. \
 example usage:
-```
+```nasm
 ; in section .data you are going to have
     string db "hello, world!\n"
     ; the name for the length of the string
