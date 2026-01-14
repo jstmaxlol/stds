@@ -2,8 +2,8 @@
 **STDS** (**S**_imple_ _s_**T**_andar_**D** **S**_tuff_) \
 => a minimal std library for nasm heads! \
 copyleft --- czjstmax <jstmaxlol@disroot.org>, <github.com/jstmaxlol> \
-&nbsp;
-working on this as a side-project to spend time and learn more \
+
+&nbsp;&nbsp; working on this as a side-project to spend time and learn more \
 about NASM (and generally assembly) development :)
 
 ## RECOMMENDATIONS UND STUFF:
