@@ -29,11 +29,14 @@ this has been chosen for both **speed** and **functionality** \
 # API
 ### `print`
 to use `print` you have to declare a string + its length. \
-also, you need to `%include` the file at the beginning of the \
-source file because one of the things that it adds in is `default rel`, \
-which must happen before anything else otherwise assembler errors. \
+**stds** assumes that the caller has already enabled `default rel` \
+before `%include`-ing the file. --- if this is not true, issues may arise.
 example usage:
 ```nasm
+default rel
+%include "stds.inc"
+; ...
+
 ; in section .data you are going to have
     string db "hello, world!", 10, 0
     ; the name for the length of the string

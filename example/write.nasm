@@ -2,7 +2,7 @@ default rel
 
 ; i have copied my nasm include files
 ; to /asm/ --- you can also just change this
-%include "/asm/std.inc"
+%include "/asm/stds.inc"
 
 section .data
     ; example string
