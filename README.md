@@ -35,7 +35,7 @@ which must happen before anything else otherwise assembler errors. \
 example usage:
 ```nasm
 ; in section .data you are going to have
-    string db "hello, world!\n"
+    string db "hello, world!", 10, 0
     ; the name for the length of the string
     ; *must* be the string's name (label) +
     ; _len, in our case, string_len:

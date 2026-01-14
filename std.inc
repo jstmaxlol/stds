@@ -20,6 +20,8 @@
 ; %include "path/to/stds.inc"
 ; -----------------------------------------
 
+default rel
+
 ; print <str>
 %macro print 1
     mov rax, 1
