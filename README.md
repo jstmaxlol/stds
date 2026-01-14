@@ -1,5 +1,5 @@
 # STDS
-STDS (Simple sTandarD Stuff) \
+**STDS** (**S**_imple_ _s_**T**_andar_**D** **S**_tuff_) \
 => a minimal std library for nasm heads! \
 copyleft --- czjstmax <jstmaxlol@disroot.org>, <github.com/jstmaxlol> \
 &nbsp;
