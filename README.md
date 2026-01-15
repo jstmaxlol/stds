@@ -77,7 +77,7 @@ if_eq rax, 2
     ; stuff
 else
     ; other stuff
-fif
+fi
 ```
 - `while`: todo
 - `for`: todo

@@ -25,13 +25,9 @@ _start:
 
     if_eq rax, 2
         print msg1
-    fif
+    fi
 
     ; for loop test
-
-    ;while_true
-    ;    print msg2
-    ;fiw
 
     return 0
 

@@ -58,7 +58,7 @@ strlen:
 ; --------if_* x y-------- ;
 
 %macro endif 0
-    fif
+    fi
 %endmacro
 
 %macro else 0
@@ -70,7 +70,7 @@ strlen:
 %$ELSE:
 %endmacro
 
-%macro fif 0
+%macro fi 0
     %if %$HAS_ELSE = 0
 %$ELSE:     ; if there was no else, define the else label here
     %endif
