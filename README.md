@@ -93,10 +93,10 @@ done
 (!) you must specify a register to store 'i' \
 syntax:
 ```nasm
-mov rax, 0
-for eax, 420
+mov eax, 0
+for ebx, 420
     inc rax
-rof
+rof ebx
 ```
 
 - `let size, var, data`: beautyfication of normal 'variable' declaration \

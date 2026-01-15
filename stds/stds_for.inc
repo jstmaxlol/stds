@@ -8,17 +8,16 @@
 ; netwide asm!  ;
 ; _____________ ;
 
-%macro for 1
+%macro for 2
     %push for
-    %define %$I 0
-    %define %$N %1
+    xor %1, %1
 %$LOOP:
-    cmp %$I, %$N
+    cmp %1, %2
     jge %$END
 %endmacro
 
-%macro rof 0
-    inc %$I
+%macro rof 1
+    inc %1
     jmp %$LOOP
 %$END:
     %pop

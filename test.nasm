@@ -49,7 +49,7 @@ _start:
     ; for *,* test
     for ebx, 1
         print msg3
-    rof
+    rof ebx
 
     ;printn i1
 
