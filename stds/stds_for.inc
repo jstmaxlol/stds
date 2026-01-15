@@ -11,14 +11,15 @@
 %macro for 2
     %push for
     xor %1, %1
+    jmp %$CHECK
 %$LOOP:
-    cmp %1, %2
-    jge %$END
 %endmacro
 
-%macro rof 1
+%macro rof 2
     inc %1
-    jmp %$LOOP
+%$CHECK:
+    cmp %1, %2
+    jl %$LOOP
 %$END:
     %pop
 %endmacro

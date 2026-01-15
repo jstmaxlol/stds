@@ -15,14 +15,14 @@ default rel
 
 section .data
     ; strings
-    msg4 db `let           ==> OK!\n`
-    msg0 db `print         ==> OK!\n`
-    msg1 db `if_*          ==> OK!\n`
-    msg2 db `while_*       ==> OK!\n`
-    msg3 db `for reg, n    ==> OK!\n`
+    msg4 db `let           ==> OK!\n\0`
+    msg0 db `print         ==> OK!\n\0`
+    msg1 db `if_*          ==> OK!\n\0`
+    msg2 db `while_*       ==> OK!\n\0`
+    msg3 db `for reg, n    ==> OK!\n\0`
 
     ; other variables
-    lets i1, 1
+    let dd, i1, 0
 
 section .text
     global _start
@@ -31,6 +31,7 @@ _start:
     
     ; let tested in .data
     print msg4
+    print msg0
 
     ; if_* test
     mov eax, 2
@@ -49,7 +50,7 @@ _start:
     ; for *,* test
     for ebx, 1
         print msg3
-    rof ebx
+    rof ebx, 1
 
     ;printn i1
 
