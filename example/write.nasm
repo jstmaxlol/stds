@@ -6,15 +6,14 @@ default rel
 
 section .data
     ; example string
-    String db "hello, world!", 10, 0
-    String_len equ $ - String
+    string db "hello, world!", 10, 0
 
 section .text
     global _start
 
 _start:
 	; print
-    print String
+    print string
 
 	; exit
     return 0

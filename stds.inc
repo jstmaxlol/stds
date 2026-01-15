@@ -20,8 +20,42 @@
 ; %include "path/to/stds.inc"
 ; -----------------------------------------
 
-; print <str>
+; ------------------------ ;
+;        FUNCTIONS         ;
+; ------------------------ ;
+
+section .text
+    global strlen
+
+strlen:
+    xor rax, rax
+.loop:
+    cmp byte [rdi + rax], 0
+    je .done
+    inc rax
+    jmp .loop
+.done:
+    ret
+
+
+; ------------------------ ;
+;       STDS MACROS        ;
+; ------------------------ ;
+
+; print <str>  (NUL-terminated)
 %macro print 1
+    lea rdi, [%1]      ; rdi = str
+    push rdi           ; save pointer
+    call strlen
+    pop rsi            ; rsi = str
+    mov rdx, rax       ; len
+    mov rdi, 1         ; stdout
+    mov rax, 1         ; sys_write
+    syscall
+%endmacro
+
+; printex <str> (manual _len)
+%macro printex 1
     mov rax, 1
     mov rdi, 1
     lea rsi, [%1]
@@ -29,9 +63,10 @@
     syscall
 %endmacro
 
-; return <int>
+; return <code>
 %macro return 1
     mov rax, 60
     mov rdi, %1
     syscall
 %endmacro
+

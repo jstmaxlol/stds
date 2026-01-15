@@ -16,10 +16,12 @@ about NASM (and generally assembly) development :)
 - every 'function' is *de facto* a `%macro..%endmacro` block:
 ```nasm
 %macro print 1
-    mov rax, 1
+    lea rdi, [%1]
+    call strlen
+    mov rdx, rax
+    mov rsi, rdi
     mov rdi, 1
-    lea rsi, [%1]
-    mov rdx, %1_len
+    mov rax, 1
     syscall
 %endmacro
 ```
@@ -28,9 +30,23 @@ this has been chosen for both **speed** and **functionality** \
 
 # API
 ### `print`
-to use `print` you have to declare a string + its length. \
+to use `print` you have to declare a string. \
 **stds** assumes that the caller has already enabled `default rel` \
 before `%include`-ing the file. --- if this is not true, issues may arise.
+example usage:
+```nasm
+default rel
+%include "stds.inc"
+; ...
+
+; in section .data you are going to have
+    string db "hello, world!", 10, 0
+
+; in _start you are going to have
+    print string
+```
+### `printex`
+to use `printex` (for **printex**plicit) you have to declare a string **+ its length.** \
 example usage:
 ```nasm
 default rel
@@ -45,7 +61,7 @@ default rel
     string_len equ $ - string
 
 ; in _start you are going to have
-    print string
+    printex string
 ```
 
 ### `return`
