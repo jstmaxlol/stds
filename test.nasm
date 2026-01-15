@@ -15,26 +15,30 @@ default rel
 
 section .data
     ; strings
-    ln db `\n`
-    tab db `\t`
-    msg1 db `if_*    ==> OK!\n`
-    msg2 db `while_* ==> OK!\n`
+    msg4 db `let           ==> OK!\n`
+    msg0 db `print         ==> OK!\n`
+    msg1 db `if_*          ==> OK!\n`
+    msg2 db `while_*       ==> OK!\n`
+    msg3 db `for reg, n    ==> OK!\n`
 
     ; other variables
-    i1 dd 1
+    lets i1, 1
 
 section .text
     global _start
 
 _start:
+    
+    ; let tested in .data
+    print msg4
 
+    ; if_* test
     mov eax, 2
-
     if_eq eax, 2
         print msg1
     fi
     
-    ; while as a for-esque-loop
+    ; while_* test
     mov eax, [i1]
     while_lt eax, 1
         print msg2
@@ -42,7 +46,12 @@ _start:
         mov eax, [i1]
     done
 
-    ; for-loop
+    ; for *,* test
+    for ebx, 1
+        print msg3
+    rof
+
+    ;printn i1
 
     return 0
 

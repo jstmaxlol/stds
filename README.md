@@ -1,4 +1,4 @@
-# STDS
+# STDS 2
 **STDS** (`S`_imple_ _s_`T`_andar_`D` `S`_tuff_) \
 => a minimal std library for nasm heads! \
 copyleft --- czjstmax <jstmaxlol@disroot.org>, <github.com/jstmaxlol> \
@@ -79,6 +79,7 @@ else
     ; other stuff
 fi
 ```
+
 - `while_*`: very similar to `if_*` \
 syntax:
 ```nasm
@@ -87,4 +88,29 @@ while_eq rax, 2
     ; stuff
 done
 ```
-- `for`: todo
+
+- `for reg, count`: a simple for-n iterator \
+(!) you must specify a register to store 'i' \
+syntax:
+```nasm
+mov rax, 0
+for eax, 420
+    inc rax
+rof
+```
+
+- `let size, var, data`: beautyfication of normal 'variable' declaration \
+(!) expands to a data declaration and must be used in `section .data` \
+syntax:
+```nasm
+let dd, x, 2
+; expands to x dd 2
+```
+(?) there also is `let*` as in `letd x, 2` will expand to `x dd 2` \
+(?) `lets` is available and it defaults to _what i decided is_ the \
+&nbsp;&nbsp;the most common data size (dword) --- it is used as follows:
+```nasm
+lets x, 2
+```
+(?) there is `letz` for `.bss` too.
+

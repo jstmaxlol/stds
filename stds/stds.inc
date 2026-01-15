@@ -1,6 +1,6 @@
-;  ______  __
-; (_  || \(_  /|
-; __) ||_/__)  |
+;  ______  __ _  
+; (_  || \(_   ) 
+; __) ||_/__) /_ 
 ; -----------------------------------------
 ; STDS (Simple sTandarD Stuff)
 ; => a minimal std library for nasm heads!
@@ -44,6 +44,10 @@ strlen:
 %include "stds_general.inc"
 ; ----------------------- ;
 
+; --------let.inc-------- ;
+%include "stds_let.inc"
+; ----------------------- ;
+
 ; ---------if.inc-------- ;
 %include "stds_if.inc"
 ; ----------------------- ;
@@ -53,5 +57,6 @@ strlen:
 ; ----------------------- ;
 
 ; --------for.inc-------- ;
-;%include "stds_for.inc"
+%include "stds_for.inc"
 ; ----------------------- ;
+
