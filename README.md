@@ -1,5 +1,5 @@
 # STDS 2
-**STDS** (`S`_imple_ _s_`T`_andar_`D` `S`_tuff_) \
+S _imple_ _s_ T _andar_ D S _tuff_ or **STDS** \
 => a minimal std library for nasm heads! \
 copyleft --- czjstmax <jstmaxlol@disroot.org>, <github.com/jstmaxlol> \
 
