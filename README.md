@@ -79,5 +79,12 @@ else
     ; other stuff
 fi
 ```
-- `while`: todo
+- `while_*`: very similar to `if_*` \
+syntax:
+```nasm
+mov rax, 2
+while_eq rax, 2
+    ; stuff
+done
+```
 - `for`: todo
