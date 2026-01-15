@@ -67,3 +67,17 @@ default rel
 ### `return`
 very simple and minimal. just `return <number>` like you would in C.
 
+# FEATURES
+- `if_* x y`, `else`: almost real `if`/`else` chains in nasm! \
+i know `%if` exists but it was cool to make nonetheless) \
+syntax:
+```nasm
+mov rax, 2
+if_eq rax, 2
+    ; stuff
+else
+    ; other stuff
+fif
+```
+- `while`: todo
+- `for`: todo
