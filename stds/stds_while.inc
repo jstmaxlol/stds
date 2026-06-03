@@ -70,3 +70,6 @@
     jbe %$END
 %endmacro
 
+%macro while 2
+    while_eq %1, %2
+%endmacro

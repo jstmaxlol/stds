@@ -16,14 +16,14 @@ elif [[ $# -ge 2 ]]; then
         printf ":> ^-I(include)?$ | ^--include$ (%s) parsed.\n" "$3"
         printf ":> using %s as include directory.\n" "$4"
         printf ":> compiling \"%s\" (output=\"%s\")\n" "$1" "$2"
-        nasm -felf64 $1 -o $1.o -I $4 \
+        nasm -felf64 $1 -o $1.o -I $4 -Wall \
             && ld $1.o -o $2 \
             && rm $1.o
         exit 0
     else                                                          
         # assemble
         printf ":> compiling \"%s\" (output=\"%s\")\n" "$1" "$2"
-        nasm -felf64 $1 -o $1.o \
+        nasm -felf64 $1 -o $1.o -Wall \
             && ld $1.o -o $2 \
             && rm $1.o
         exit 0
@@ -37,7 +37,9 @@ else
     else                                                          
         printf "(!) warning: oFILE not specified. using iFILE (\"%s\") as output FILE\n" "$1"
         printf ":> compiling \"%s\" (output=\"%s\")\n" "$1" "$1"
-        nasm -felf64 $1 -o $1.o && ld $1.o -o $1 && rm $1.o
+        nasm -felf64 $1 -o $1.o -Wall \
+            && ld $1.o -o $1 \
+            && rm $1.o
         exit 2
     fi
 fi

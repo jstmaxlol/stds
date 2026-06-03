@@ -21,6 +21,12 @@
 ; -----------------------------------------
 
 ; ------------------------ ;
+;    EXTERNAL FUNCTIONS    ;
+; ------------------------ ;
+;;commented-out (included in other files)
+;extern printf
+
+; ------------------------ ;
 ;        FUNCTIONS         ;
 ; ------------------------ ;
 section .text
@@ -60,3 +66,6 @@ strlen:
 %include "stds_for.inc"
 ; ----------------------- ;
 
+; ------printf.inc------- ;
+%include "stds_printf.inc"
+; ----------------------- ;

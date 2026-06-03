@@ -7,8 +7,19 @@
 ; general macros;
 ; _____________ ;
 
-; print <str>    ---     (NUL-terminated)
+; print "str"
 %macro print 1
+    %push print
+    section .rodata
+%%str:
+    db %1, 0
+    section .text
+    print %%str
+    %pop
+%endmacro
+
+; prints [str]
+%macro prints 1
     lea rdi, [%1]
     push rdi 
     call strlen
@@ -19,7 +30,7 @@
     syscall
 %endmacro
 
-; printex <str>
+; printex [str]
 %macro printex 1
     mov rax, 1
     mov rdi, 1

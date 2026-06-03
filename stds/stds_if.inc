@@ -90,3 +90,6 @@
     jbe %$ELSE
 %endmacro
 
+%macro if 2
+    if_eq %1, %2
+%endmacro
