@@ -18,6 +18,10 @@ main:
     push rbp
     mov rbp, rsp
 
+<<<<<<< HEAD
+=======
+    ; let tested in .data
+>>>>>>> refs/remotes/origin/master
     printf "%s", msg4
     printf "%s", msg0
 
@@ -26,6 +30,10 @@ main:
         prints msg1
     fi
 
+<<<<<<< HEAD
+=======
+    ; while_* test (i1 starts at 0, so while eq 1 won't run - that's correct)
+>>>>>>> refs/remotes/origin/master
     mov eax, [i1]
     while eax, 1
         printf "%s", msg2
@@ -43,6 +51,10 @@ main:
     xor eax, eax
     pop rbp
     ret
+<<<<<<< HEAD
 
 section .note.GNU-stack noalloc noexec nowrite progbits
+=======
+>>>>>>> refs/remotes/origin/master
 
+section .note.GNU-stack noalloc noexec nowrite progbits
