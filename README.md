@@ -1,3 +1,5 @@
+> (!) this repo is no longer maintainted. it has moved over at [git.czkove.cc](https://git.czkove.cc/)
+
 # STDS 2
 'S'_imple_ _s_'T'_andar_'D' 'S'_tuff_ or **STDS**
 
